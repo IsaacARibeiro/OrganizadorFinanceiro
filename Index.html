@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top" />
+    <?!= include('Stylesheet'); ?>
+  </head>
+  <body>
+    <header>
+      <h1>Organizador Financeiro</h1>
+      <nav>
+        <button onclick="mostrarTela('dashboard')">Dashboard</button>
+        <button onclick="mostrarTela('lancamentos')">Lançamentos</button>
+        <button onclick="mostrarTela('categorias')">Categorias</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="dashboard" class="tela ativa"><?!= include('TelaDashboard'); ?></section>
+      <section id="lancamentos" class="tela"><?!= include('TelaLancamentos'); ?></section>
+      <section id="categorias" class="tela"><?!= include('TelaCategorias'); ?></section>
+    </main>
+
+    <?!= include('JavaScript'); ?>
+    <?!= include('DashboardScript'); ?>
+    <?!= include('LancamentosScript'); ?>
+    <?!= include('CategoriasScript'); ?>
+  </body>
+</html>

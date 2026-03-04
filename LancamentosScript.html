@@ -1,0 +1,21 @@
+<script>
+  function carregarLancamentos() {
+    google.script.run.withSuccessHandler((itens) => {
+      const tbody = document.getElementById('tabelaLancamentos');
+      tbody.innerHTML = '';
+
+      itens.forEach((item) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${item.data}</td>
+          <td>${item.descricao}</td>
+          <td>${item.categoria}</td>
+          <td>${item.valor}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }).listarLancamentos();
+  }
+
+  carregarLancamentos();
+</script>

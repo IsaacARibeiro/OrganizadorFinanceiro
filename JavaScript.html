@@ -1,0 +1,12 @@
+<script>
+  function mostrarTela(nomeTela) {
+    document.querySelectorAll('.tela').forEach((tela) => {
+      tela.classList.remove('ativa');
+    });
+
+    const alvo = document.getElementById(nomeTela);
+    if (alvo) {
+      alvo.classList.add('ativa');
+    }
+  }
+</script>
