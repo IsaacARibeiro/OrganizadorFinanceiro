@@ -1,0 +1,16 @@
+<script>
+  function carregarCategorias() {
+    google.script.run.withSuccessHandler((categorias) => {
+      const lista = document.getElementById('listaCategorias');
+      lista.innerHTML = '';
+
+      categorias.forEach((categoria) => {
+        const item = document.createElement('li');
+        item.textContent = categoria;
+        lista.appendChild(item);
+      });
+    }).listarCategorias();
+  }
+
+  carregarCategorias();
+</script>

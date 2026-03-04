@@ -1,0 +1,11 @@
+<script>
+  function carregarDashboard() {
+    google.script.run.withSuccessHandler((resumo) => {
+      document.getElementById('saldoAtual').textContent = resumo.saldoAtual;
+      document.getElementById('totalReceitas').textContent = resumo.totalReceitas;
+      document.getElementById('totalDespesas').textContent = resumo.totalDespesas;
+    }).obterResumo();
+  }
+
+  carregarDashboard();
+</script>
